@@ -1,2 +1,1 @@
-
 django-admin startproject LibraryProject
