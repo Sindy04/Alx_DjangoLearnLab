@@ -4,3 +4,6 @@
 
 "class Book(models.Model)", 
 "title", "author"
+
+"class Librarian(models.Model)",
+"library"
