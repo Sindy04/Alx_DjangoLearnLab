@@ -5,3 +5,7 @@
 "from .models import Library"
 
 "from django.views.generic.detail import DetailView"
+
+#views for user login, logout, and registration
+"from django.contrib.auth import login", 
+"from django.contrib.auth.forms import UserCreationForm"
