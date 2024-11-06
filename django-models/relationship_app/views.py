@@ -17,11 +17,11 @@
 "from djanga.shortcuts import render"
 "from.models import UserProfile"
 
-def Admin_view(request):
-  @user_passes_test(lambda u: u.userprofile.role == 'Admin')
-  def view(request):
+def admin_view(request):
+  if request.user.userprofile.role == 'Admin':
     return render(request,'Admin.html')
-    return view(request)
+  else: 
+    return view(request,'403.html')
 
 def Librarian_view(request):
   @user_passes_test(lambda u: u.userprofile.role == 'Librarian')
