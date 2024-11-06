@@ -17,22 +17,22 @@
 "from djanga.shortcuts import render"
 "from.models import UserProfile"
 
-def admin_view(request):
+def Admin_view(request):
   @user_passes_test(lambda u: u.userprofile.role == 'Admin')
   def view(request):
-    return render(request,'admin.html')
+    return render(request,'Admin.html')
     return view(request)
 
-def librarian_view(request):
-  @user_passes_test(lambda u: u.userprofile.role == 'librarian')
+def Librarian_view(request):
+  @user_passes_test(lambda u: u.userprofile.role == 'Librarian')
   def  view(request):
-    return render(request,'librarian.html')
+    return render(request,'Librarian.html')
     return view(request)
 
-def member_view(request):
-  @user_passes_test(lambda u: u.userprofile.role == 'member')
+def Member_view(request):
+  @user_passes_test(lambda u: u.userprofile.role == 'Member')
   def  view(request):
-    return render(request,'member.html')
+    return render(request,'Member.html')
     return view(request)
     
 
