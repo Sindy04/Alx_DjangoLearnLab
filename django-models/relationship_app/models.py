@@ -9,12 +9,21 @@
 "library"
 
 "class UserProfile(models.Model):",
-"Admin", "Member"
+"ROLE_CHOICES = ("
+('Admin','Admin'),
+('Librarian','Librarian),
+('Member","Member"),
+)
+ user = models.OneToOneField(User,on_delete=models.CASCADE)
+ role = models.CharField(max_length=10, choice = ROLE_CHOICES,default = 'Member')                       
 
-from django.db import models
-class MyModel(models.Model):
-  #...
-  class Meta:
-    permissions = [
-      ("is_admin", "Can access admin view")
-    ]
+@receiver(post_save,sender = User)
+def create_user_profile(sender,instance,created, *kwargs):
+  if created:
+    UserProfile.objects.create(user=instance)
+    @receiver(post_save, sender=User)
+    def save_user_profile(sender,instance,**kwargs):
+      instance.userprofile.save()
+
+
+    
