@@ -12,9 +12,14 @@
 
 "views.register","LogoutView.as_view(template_name=","LoginView.as_view(template_name="
 
-#Admin view
-"from django.contrib.auth.decorators imports permission_required"
-"from django.shortcuts import render"
-@permission_required('myapp.is_admin')
+#Role-Based Views
+"from django.contrib.auth.decorators import user_passes_test"
+"from djanga.shortcuts import render"
+"from.models import UserProfile"
+
 def admin_view(request):
-  return render(request, 'admin.html')
+  @user_passes_test(lambda u: u.userprofile.role =='Admin')
+  def view(request):
+    return render(request,'admin.html')
+    return view(request)
+    
