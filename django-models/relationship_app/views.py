@@ -18,9 +18,23 @@
 "from.models import UserProfile"
 
 def admin_view(request):
-  @user_passes_test(lambda u: u.userprofile.role =='Admin')
+  @user_passes_test(lambda u: u.userprofile.role == 'Admin')
   def view(request):
     return render(request,'admin.html')
     return view(request)
+
+def librarian_view(request):
+  @user_passes_test(lambda u: u.userprofile.role == 'librarian')
+  def  view(request):
+    return render(request,'librarian.html')
+    return view(request)
+
+def member_view(request):
+  @user_passes_test(lambda u: u.userprofile.role == 'member')
+  def  view(request):
+    return render(request,'member.html')
+    return view(request)
+    
+
 
     
