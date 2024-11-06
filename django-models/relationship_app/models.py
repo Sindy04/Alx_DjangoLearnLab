@@ -10,3 +10,11 @@
 
 "class UserProfile(models.Model):",
 "Admin", "Member"
+
+from django.db import models
+class MyModel(models.Model):
+  #...
+  class Meta:
+    permissions = [
+      ("is_admin", "Can access admin view")
+    ]
