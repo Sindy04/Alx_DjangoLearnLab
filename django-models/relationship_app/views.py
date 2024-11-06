@@ -22,4 +22,5 @@ def admin_view(request):
   def view(request):
     return render(request,'admin.html')
     return view(request)
+
     
