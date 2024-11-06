@@ -9,6 +9,6 @@ views.register",
 
 urlpatterns = [
     path('Admin/',views.Admin_view, name = 'Admin_view'),
-    path('librarian/',views.librarian_view, name = 'librarian_view'),
-    path('member/' ,views.member_view, name = 'member_view'),
+    path('Librarian/',views.Librarian_view, name = 'Librarian_view'),
+    path('Member/' ,views.Member_view, name = 'Member_view'),
 ]
