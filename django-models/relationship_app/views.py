@@ -24,6 +24,8 @@ from.models import UserProfile
 "relationship_app.can_delete_book"
 
 def admin_view(request):
+  return HttpResponse("Admin view")
+  
   if request.user.userprofile.role == 'Admin':
     return render(request,'Admin.html')
   else: 
