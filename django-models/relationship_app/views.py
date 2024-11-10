@@ -13,9 +13,10 @@
 "views.register","LogoutView.as_view(template_name=","LoginView.as_view(template_name="
 
 #Role-Based Views
-"from django.contrib.auth.decorators import user_passes_test"
-"from djanga.shortcuts import render"
-"from.models import UserProfile"
+from djanga.shortcuts import render
+from django.contrib.auth.decorators import user_passes_test
+from.models import UserProfile
+
 
 "from django.contrib.auth.decorators import permission_required",
 "relationship_app.can_add_book",
