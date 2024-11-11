@@ -58,3 +58,17 @@ class CustomUser(AbstractUser):
   objectd = CustomUserManager()
 
 
+# File Existence and Custom Permissions
+
+from django.db import models
+
+class Mymode(models.Model):
+  #...
+  class Meta:'
+    permissions = [
+      ("can_view", "can view my model")'
+      ("can_create", "can create my model"),
+      ("can_edit"< "can edit my model"),
+      ("can_delete", "can delete my model"),
+    ]
+
