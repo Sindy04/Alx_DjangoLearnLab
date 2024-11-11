@@ -21,4 +21,34 @@ class CustomUserManager(BaseUserManager):
       raise ValueError('Users must have a username')
       if not email:
         raise ValueError('Users must have an email address')
-                         
+
+      now = timezone.now()
+      email = self . normalize_email(email)
+      user = self . model(
+        username=username,
+        email=email,
+        date_of_birth=extra_fields.pop('date_of_birth', None),
+        profile_photo=extra_fields.pop('profile_photo', None),
+
+        is_staff=False
+        is_active=True
+        is_superuser=False,
+        last_login=now,
+        date_joined=now,
+         **extra fields
+        )
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+      
+def create_super(self, username, email, password=None, **extra_fields):
+  user = self.create_user(
+    username=username,
+    email=email,
+    password=password,
+    **extra_fields
+  )
+  user.is_staff =True
+  user.is_superuser = True
+  user.save(using=self._db)
+  return user
