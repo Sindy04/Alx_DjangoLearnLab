@@ -52,3 +52,9 @@ def create_superuser(self, username, email, password=None, **extra_fields):
   user.is_superuser = True
   user.save(using=self._db)
   return user
+
+class CustomUser(AbstractUser):
+  ...
+  objectd = CustomUserManager()
+
+
