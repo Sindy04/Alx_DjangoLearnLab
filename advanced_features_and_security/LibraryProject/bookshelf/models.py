@@ -64,6 +64,7 @@ from django.db import models
 
 class Mymode(models.Model):
   #...
+  class Book(models.Model):
   class Meta:'
     permissions = [
       ("can_view", "can view my model")'
