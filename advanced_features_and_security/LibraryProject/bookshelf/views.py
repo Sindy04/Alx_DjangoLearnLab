@@ -26,4 +26,5 @@ return render(request,'book_list.html',{'books':books})
 def book_detail(request,pk):
   book = Book.objects.get(pk=pk) #Using Django's ORM
   return render(request,'book_detail.html',{'book':book})
+  from .forms import ExampleForm
   
