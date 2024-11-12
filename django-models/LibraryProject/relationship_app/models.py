@@ -16,6 +16,7 @@ class Librarian(models.Model):
   library =models.OneToOneField(Library,on_delete=models.CASCADE)
   return self.name
 
-class Meta
+class Meta:
 permissions
+can_add_book, can_change_book, can_delete_book
 
