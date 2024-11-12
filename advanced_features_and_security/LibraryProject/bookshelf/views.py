@@ -13,3 +13,17 @@ def book_list(request):
 def book_delete(request, pk)
 #Book deletion logic here
 return render(request, 'book_confirm_delete.html')
+
+#bookshelf/views.py
+from django.shortcuts import render, redirect
+from .models import Book
+
+@login_required
+def book_list(request):
+books = Book.objects.all() #Using Django's ORM
+return render(request,'book_list.html',{'books':books})
+@login_required
+def book_detail(request,pk):
+  book = Book.objects.get(pk=pk) #Using Django's ORM
+  return render(request,'book_detail.html',{'book':book})
+  
