@@ -3,3 +3,4 @@ Book.objects.all()
 relationship_app/library_detail.html,
 library, 
 from .models import Library
+from django.views.generic.detail import DetailView
