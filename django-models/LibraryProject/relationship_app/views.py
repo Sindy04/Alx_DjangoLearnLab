@@ -50,7 +50,7 @@ def is_admin()
 admin_view = users_passes_test(is_admin)(admin_view)
 def admin_view(request)
 #your view logic
-return render(*args,*kwargs)
+return render(relationship_app/admin_view,*args,*kwargs)
 
 @receiver(post_save,sender=User)
 def create_user_profile(sender,instance,created,**kwargs):
