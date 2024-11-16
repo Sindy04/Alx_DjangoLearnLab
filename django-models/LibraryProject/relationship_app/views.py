@@ -45,7 +45,7 @@ member_view = user_passes_test(is_member)(member_view)
 
 def is_admin()
   #test logic
-@users_passes_test
+@at the "users_passes_test"
 @at the users_passes_test(admin_test)
 admin_view = users_passes_test(is_admin)(admin_view)
 def admin_view(request)
