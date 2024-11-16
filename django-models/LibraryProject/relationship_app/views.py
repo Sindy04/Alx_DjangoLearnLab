@@ -43,6 +43,20 @@ admin_view = user_passes_test(is_admin)(admin_view)
 librarian_view = user_passes_test(is_librarian)(librarian_view)
 member_view = user_passes_test(is_member)(member_view)
 
+def is_admin()
+  #test logic
+@user_passes_test(admin_test)
+admin_view = user_passes_test(is_admin)(admin_view)
+def admin_view(request)
+#your view logic
+return render(*args,*kwargs)
+
+@receiver(post_save,sender=User)
+def create_user_profile(sender,instance,created,**kwargs):
+  if created:
+    UserProfile.objects.create(user=instance)
+
+
 #RELATIONSHIP
 relationship_app/member_view.html
 relationship_app/librarian_view.html
