@@ -42,3 +42,8 @@ def is_member(user):
 admin_view = user_passes_test(is_admin)(admin_view)
 librarian_view = user_passes_test(is_librarian)(librarian_view)
 member_view = user_passes_test(is_member)(member_view)
+
+#RELATIONSHIP
+relationship_app/member_view.html
+relationship_app/librarian_view.html
+relationship_app/admin_view.html
