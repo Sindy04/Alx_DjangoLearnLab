@@ -20,13 +20,13 @@ from django.contrib.auth.decorators import user_passes_test
 from django.shortcuts import render
 
 def admin_view(request):
-  return render(request,'admin.html')
+  return render(request,'admin_view.html')
 
 def librarian_view(request):
-  return render(request, 'librarian.html')
+  return render(request, 'librarian_view.html')
 
 def member_view(request):
-  return render(request, 'member.html')
+  return render(request, 'member_view.html')
 
 #Role checks
 def is_admin(user):
