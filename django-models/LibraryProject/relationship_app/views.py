@@ -20,7 +20,7 @@ from django.contrib.auth.decorators import user_passes_test
 from django.shortcuts import render
 
 def admin_view(request):
-  return render(request,'admin_view.html')
+  return render(request,'relationship_app/admin_view.html')
 
 def librarian_view(request):
   return render(request, 'librarian_view.html')
