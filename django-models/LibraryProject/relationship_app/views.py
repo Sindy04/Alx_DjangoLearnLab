@@ -20,7 +20,7 @@ from django.contrib.auth.decorators import user_passes_test
 from django.shortcuts import render
 
 def admin_view(request):
-  return render(request,'relationship_app/admin_view.html')
+  return render(request,'admin_view.html')
 
 def librarian_view(request):
   return render(request, 'librarian_view.html')
@@ -50,7 +50,7 @@ def is_admin()
 admin_view = users_passes_test(is_admin)(admin_view)
 def admin_view(request)
 #your view logic
-return render(relationship_app/admin_view,*args,*kwargs)
+return render(relationship_app/admin_view)
 
 @receiver(post_save,sender=User)
 def create_user_profile(sender,instance,created,**kwargs):
