@@ -78,6 +78,13 @@ class AdminView(UserPassesTestMixin, View):
 def get(self, request):
   return render(request, 'admin.html')
 
+from django.contrib.auth.decorators import permission_required
+from django.shortcuts import render
+
+@permission_required('is_admin')
+def admin_view(request):
+  return render(request,'admin.html')
+
 #RELATIONSHIP
 relationship_app/member_view.html
 relationship_app/librarian_view.html
