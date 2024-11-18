@@ -7,3 +7,5 @@ from .serializers import BookSerializer
 class BookListCreateAPIView(generics.ListCreateAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
+
+router .register(r'book_all' , BookViewSet, basename='book_all')
