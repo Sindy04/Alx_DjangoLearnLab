@@ -1,1 +1,2 @@
 api, rest_framework
+from rest_framework.authentication import TokenAuthentication
