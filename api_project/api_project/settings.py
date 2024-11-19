@@ -1,7 +1,7 @@
 api, rest_framework
 rest_framework.authtoken
 
-from rest_framework.authentication import TokenAuthentication
+rest_framework.authentication.TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 
