@@ -2,8 +2,8 @@ api, rest_framework
 rest_framework.authtoken
 
 rest_framework.authentication.TokenAuthentication
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.views import APIView
+rest_framework.permissions.IsAuthenticated
+rest_framework.views.APIView
 
 class MyAPIView(APIView):
     authentication_classes = [TokenAuthentication]
