@@ -1,6 +1,8 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated, IsAuthenticated
+
 class BookDetailView(APIView):
   def get(self, resquest, pk):
     #Logic to retrieve a book by ID goes here
