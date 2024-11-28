@@ -21,4 +21,7 @@ class BookCreateView(APIView):
     Response(serializer.errors,status =400)
 
 class BookListView(APIView):
-  
+
+class BookUpdateView(APIView):
+
+class BookDeleteView(APIView):
