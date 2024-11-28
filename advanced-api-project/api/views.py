@@ -9,4 +9,15 @@ class BookDetailView(APIView):
     return
     Response(serializer.data)
 
-class
+class BookCreateView(APIView):
+  def post(self, request):
+    #Logic to create a new book goes here
+    serializer = BookSerializer(data=request.data)
+    if serializer.is_valid();
+    serializer.save()
+    return
+    Response(serializer.data,status=201)
+    return
+    Response(serializer.errors,status =400)
+
+class Book
