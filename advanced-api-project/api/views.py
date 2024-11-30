@@ -45,3 +45,5 @@ class UserListView(generics.ListAPIView):
     filter_backends = [filters.SearchFilter]
     search_fields = ['username', 'email']
   filters.SearchFilter
+
+title, author, publication_year
