@@ -44,4 +44,4 @@ class UserListView(generics.ListAPIView):
     serializer_class = UserSerializer
     filter_backends = [filters.SearchFilter]
     search_fields = ['username', 'email']
-  
+  filters.SearchFilter
