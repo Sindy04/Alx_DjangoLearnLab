@@ -34,3 +34,14 @@ from rest_framework import generics
 
 #ordering
 filters.OrderingFilter
+
+#Searching
+
+from rest_framework import filters
+
+class UserListView(generics.ListAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['username', 'email']
+  
