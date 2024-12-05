@@ -29,4 +29,10 @@ def register_view(request):
 
 @login_required
 def profile_view(request):
+  if request.method =='POST':
+    #Update user profile
+    user =request.user
+    user.email = request.POST['email']
+    user.save() 
+    return redirect('profile')
   return render(request,'profile.html')
