@@ -12,3 +12,8 @@ DATABASES={
     'PORT':'5432', #Replace with your database port
   }
 }
+
+INSTALLED_APPS =[
+  ...
+  'taggit', #Add this line
+]
