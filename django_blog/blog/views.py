@@ -50,5 +50,22 @@ def search(request):
   )
   return render(request, 'search_result.html', {'posts': posts})
 
+#CRUD operation
 
+from django.shortcuts import render, redirect, get_object_or_404
+from django.views.generic import CreateView, UpdateView, DeleteView
+from .models import CommentForm
+
+class CommentCreateView(CreateView):
+model = comment
+form_class = CommentForm
+template_name = 'comment_form.html'
+
+def form_valid(self, form):
+  form.instance.post_id=self.kwargs['pk']
+  return super().form_valid(form)
+
+def get_success_url(self):
+  return reverse('post_detail',kwargs={'pk':self.kwargs['pk']})
+  
 
