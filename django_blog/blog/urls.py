@@ -24,6 +24,6 @@ from . import views
 
 urlpatterns = [
   # ...
-  path('tags/<slug:tag_slug>/', views.PostByTagListView.as_View(), name='post_by_tag'),
+  path('tags/<slug:tag_slug>/',views.PostByTagListView.as_view(), name='post_by_tag'),
   # ...
 ]
