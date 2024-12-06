@@ -38,7 +38,16 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin,DeleteView):
     post = self.get_object()
     return self.request.user == post.author
 
+from django.db.models import Q
 
+def search(request):
+  query = request.GET.get('query','')
+  posts = Post.objects.filter(
+    Q(title__icontains=query)  |
+    Q(tag__name__icontains=query) |
+    Q(content__icontains=query)
+  )
+  return render(request, 'search_result.html', {'posts': posts})
 
 
 
