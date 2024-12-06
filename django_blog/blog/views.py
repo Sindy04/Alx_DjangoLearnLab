@@ -44,8 +44,9 @@ def search(request):
   query = request.GET.get('query','')
   posts = Post.objects.filter(
     Q(title__icontains=query)  |
-    Q(tag__name__icontains=query) |
+    Q(tags__name__icontains=query) |
     Q(content__icontains=query)
+    
   )
   return render(request, 'search_result.html', {'posts': posts})
 
