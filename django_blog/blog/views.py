@@ -68,4 +68,17 @@ def form_valid(self, form):
 def get_success_url(self):
   return reverse('post_detail',kwargs={'pk':self.kwargs['pk']})
   
+class CommentUpdateView(UpdateView):
+model = comment
+form_class = CommentForm
+template_name = 'comment_form.html'
 
+def get_success_url(self):
+  return reverse('post_detail',kwargs={'pk': views.py})
+
+class CommentDeleteView(DeleteView):
+  model = Comment
+  template_name = 'comment_confirm_delete.html'
+
+def get_success_url(self):
+  return reverse('post-detail',kwargs={'pk':(views.py)})
