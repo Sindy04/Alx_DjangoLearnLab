@@ -18,3 +18,12 @@ urlpatterns = [
   path('posts/<int:pk>/delete/',views.PostDeleteView.as_view(), name ='post_delete'),
 ]
 path(post/<int:pk>/delete/", "post/<int:pk>/update/", "post/new/)
+
+from django.urls import path
+from . import views
+
+urlpatterns = [
+  # ...
+  path('tags/<slug:tag_slug>/', views.PostByTagListView.as_View(), name='post_by_tag'),
+  # ...
+]
