@@ -82,3 +82,5 @@ class CommentDeleteView(DeleteView):
 
 def get_success_url(self):
   return reverse('post-detail',kwargs={'pk':(views.py)})
+
+POST", method, save()
