@@ -23,8 +23,10 @@ def __str__(self):
 
 
 #Implementing User Follows and Feed Functionality
+
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
   following = models.ManyToManyField('self',symmetrical=False, blank=True)
+  following
