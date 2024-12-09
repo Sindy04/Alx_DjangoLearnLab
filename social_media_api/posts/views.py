@@ -17,3 +17,18 @@ class CommentViewSet(viewsets.ModelViewSet):
 
 def perform_create(self,serializer):
   serializer.save(author=self.request.user)
+
+#Create a view in the posts app that generates
+
+from rest_framework import status
+from rest_framework.response import Response
+from rest_frame.views import APIView
+from .models import Post
+from accounts.models import User
+
+class FeedView(APIView):
+  def get(self, request):
+    followed_users = request.user.following.all()
+    posts = Post.objects.filter(author__in=followed_users).order_by('_created_at')
+    serializer = PostSerializer(posts, many=True)
+    return Response(serializer.date)
