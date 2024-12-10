@@ -28,3 +28,10 @@ X_FRAME_OPTIONS = 'DENY'
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_SSL_REDIRECT = True
   
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFileStorage'
+
+MIDDLEWARE = [
+  #...
+'whitenoise.middleware.WhiteNoiseMiddleware',
+  #...
+]
